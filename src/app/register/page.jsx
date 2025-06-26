@@ -25,7 +25,7 @@ export default function RegisterPage() {
       const res = await api.post("/register", values);
       dispatch(loginSuccess({ token: res.data.token, user: res.data.user }));
       toast.success('Register successful');
-      router.push("/dashboard");
+      router.push("/");
     } catch (err) {
       toast.error(err.response?.data?.message || 'Something went wrong');
     } finally {
